@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const httpServer = require("http").createServer(app); // Use http to create the server
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const cors = require("cors");
@@ -42,6 +41,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+  const httpServer = require("http").createServer(app); // Use http to create the server
 
   const io = new Server(httpServer, { 
     cors:{
